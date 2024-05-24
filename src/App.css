@@ -5,11 +5,16 @@
     text-decoration: none !important;
     box-sizing: border-box !important;
 }
-h1,h2,p,ol{
+
+h1,
+h2,
+p,
+ol {
     margin-bottom: 0;
 }
+
 .bg_yellow {
-    background: #FFAE00 !important;
+    background: #FFAE00;
     padding-block: 10px;
 }
 
@@ -22,5 +27,72 @@ h1,h2,p,ol{
 }
 
 .bg_grey {
-    background-color: #3D464D !important;
+    background-color: #3D464D;
+}
+
+.hover_effect {
+    border-radius: 20px 0 0 20px;
+    transition: 500ms;
+    width: 100% !important;
+}
+
+.hover_effect:hover {
+    background-color: #26313A;
+}
+
+.hover_effect:hover svg path {
+    color: #FFAE00;
+    fill: #FFAE00;
+
+
+}
+
+.hover_effect:hover p {
+    color: #FFAE00 !important;
+}
+
+.accordion {
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-bg: none;
+}
+
+.accordion-button {
+    padding: 0;
+
+}
+
+.accordion-item {
+
+    background-color: none;
+    border: none;
+    --bs-accordion-active-bg: #26313A;
+}
+
+.accordion-body {
+    padding: 0;
+    background-color: #26313A;
+    color: white;
+}
+
+.accordion-button::after {
+    background-image: url(./assets/images/svg/arrow.svg);
+    position: absolute;
+    right: 5%;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url(./assets/images/svg/arrow.svg);
+    transform: var(--bs-accordion-btn-icon-transform);
+}
+
+.bg_blueish {
+    background-color: #EBEDF0;
+}
+
+::placeholder {
+    font-size: 12px;
+    opacity: 0.3;
+}
+input[type=search]:focus{
+    outline:none;
 }
