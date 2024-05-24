@@ -1,23 +1,23 @@
 import React from "react";
 import { Accordion } from "react-bootstrap";
 import logo from "../assets/images/svg/logo.svg";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Asidebar = () => {
   return (
     <div>
-      <div className="bg_yellow bg-success d-flex py-3 justify-content-center  align-items-center gap-2">
+      <div className="bg_yellow  d-flex py-3 justify-content-center  align-items-center gap-2">
         <img src={logo} alt="logo" />
         <a
           className="text-decoration-none bg-white border border-1 fs_12 px-2 py-1 text-black  "
           href=""
         >
-          button
+          ADMIN
         </a>
       </div>
 
       <div className="">
-        <a className="text-decoration-none " href="">
+        <Link className="text-decoration-none " to="/">
           <div className=" d-flex align-items-center hover_effect py-3 px-3 gap-3">
             <svg
               width="16"
@@ -35,7 +35,7 @@ const Asidebar = () => {
             </svg>
             <p className="fs_14 text-white ">Dashboard</p>
           </div>
-        </a>
+        </Link>
 
         <a>
           <Accordion>
@@ -63,16 +63,20 @@ const Asidebar = () => {
                 </div>
               </Accordion.Header>
               <Accordion.Body>
-                <div className="text-center">
-                  <p className="mt-1">item1</p>
-                  <p className="mt-1">item1</p>
+                <div className="text-center d-flex flex-column py-2">
+                  <Link className=" text-white " to="Catalog1/">
+                    catalog_1
+                  </Link>
+                  <Link className="mt-1 text-white " to="Catalog2/">
+                    catalog_2
+                  </Link>
                 </div>
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
         </a>
 
-        <a className="text-decoration-none " href="">
+        <Link className="text-decoration-none " to="User/">
           <div className=" d-flex align-items-center hover_effect py-3 px-3 gap-3">
             <svg
               width="16"
@@ -89,8 +93,8 @@ const Asidebar = () => {
 
             <p className="fs_14 text-white ">Users</p>
           </div>
-        </a>
-        <a className="text-decoration-none " href="">
+        </Link>
+        <Link className="text-decoration-none " to="Sip/">
           <div className=" d-flex align-items-center hover_effect py-3 px-3 gap-3">
             <svg
               width="16"
@@ -107,7 +111,7 @@ const Asidebar = () => {
 
             <p className="fs_14 text-white ">SIPs</p>
           </div>
-        </a>
+        </Link>
         <a>
           <Accordion>
             <Accordion.Item eventKey="0">
@@ -137,15 +141,19 @@ const Asidebar = () => {
                 </div>
               </Accordion.Header>
               <Accordion.Body>
-                <div className="text-center">
-                  <p className="mt-1">item1</p>
-                  <p className="mt-1">item1</p>
+                <div className="text-center d-flex flex-column py-2">
+                  <Link className=" text-white " to="Catalog1/">
+                    Location_1
+                  </Link>
+                  <Link className="mt-1 text-white " to="Catalog2/">
+                    Location_2
+                  </Link>
                 </div>
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
         </a>
-        <a className="text-decoration-none " href="">
+        <Link className="text-decoration-none " to="Comunication/">
           <div className=" d-flex align-items-center hover_effect py-3 px-3 gap-3">
             <svg
               width="16"
@@ -162,8 +170,8 @@ const Asidebar = () => {
 
             <p className="fs_14 text-white ">Communications</p>
           </div>
-        </a>
-        <a className="text-decoration-none " href="">
+        </Link>
+        <Link className="text-decoration-none " to="Transaction/">
           <div className=" d-flex align-items-center hover_effect py-3 px-3 gap-3">
             <svg
               width="16"
@@ -180,8 +188,8 @@ const Asidebar = () => {
 
             <p className="fs_14 text-white ">Transactions</p>
           </div>
-        </a>
-        <a className="text-decoration-none " href="">
+        </Link>
+        <Link className="text-decoration-none " to="Privacy/">
           <div className=" d-flex align-items-center hover_effect py-3 px-3 gap-3">
             <svg
               width="16"
@@ -215,8 +223,8 @@ const Asidebar = () => {
 
             <p className="fs_14 text-white ">Privacy Policy</p>
           </div>
-        </a>
-        <a className="text-decoration-none " href="">
+        </Link>
+        <Link className="text-decoration-none " to="Term/">
           <div className=" d-flex align-items-center hover_effect py-3 px-3 gap-3">
             <svg
               width="16"
@@ -240,7 +248,7 @@ const Asidebar = () => {
 
             <p className="fs_14 text-white ">Terms and Conditions</p>
           </div>
-        </a>
+        </Link>
         <a>
           <Accordion>
             <Accordion.Item eventKey="0">
@@ -276,9 +284,13 @@ const Asidebar = () => {
                 </div>
               </Accordion.Header>
               <Accordion.Body>
-                <div className="text-center">
-                  <p className="mt-1">item1</p>
-                  <p className="mt-1">item1</p>
+                <div className="text-center d-flex flex-column py-2">
+                  <Link className=" text-white " to="Catalog1/">
+                    Language
+                  </Link>
+                  <Link className="mt-1 text-white " to="Catalog2/">
+                   Personal settings
+                  </Link>
                 </div>
               </Accordion.Body>
             </Accordion.Item>
