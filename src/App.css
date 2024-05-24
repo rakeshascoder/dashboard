@@ -1,0 +1,26 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style-type: none !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+}
+h1,h2,p,ol{
+    margin-bottom: 0;
+}
+.bg_yellow {
+    background: #FFAE00 !important;
+    padding-block: 10px;
+}
+
+.fs_12 {
+    font-size: 12px;
+}
+
+.fs_14 {
+    font-size: 14px;
+}
+
+.bg_grey {
+    background-color: #3D464D !important;
+}
