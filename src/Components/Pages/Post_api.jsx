@@ -9,6 +9,8 @@ const Post_api = () => {
   let [city, setcity] = useState("");
   let [state, setstate] = useState("");
 
+  let[items, setitems] = useState([]);
+
   useEffect(() => {
     let myfunc = async () => {
       let apidata = await fetch(
