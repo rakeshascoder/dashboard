@@ -6,20 +6,21 @@ import edit_icon from "../../assets/images/svg/edit_icon.svg";
 import delete_icon from "../../assets/images/svg/delete_icon.svg";
 import action_icon from "../../assets/images/svg/action_icon.svg";
 const User = () => {
-
-
-
-
   // -----action_pop--js-----
-  let action_dott = document.querySelector(".action_dott");
-  let action_popup = document.querySelector(".action_popup");
-  action_dott.addEventListener("click", function () {
-    action_popup.classList.toggle("d-block");
+
+
+
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    let action_dott = document.querySelector(".action_dott");
+    let action_popup = document.querySelector(".action_popup");
+    console.log(action_dott);
+    console.log(action_popup);
+
+    action_dott.addEventListener("click", function () {
+      action_popup.classList.toggle("d-none");
+    });
   });
-
-
-
-
 
   let [apidata, setapidata] = useState([]);
   useEffect(() => {
@@ -27,7 +28,7 @@ const User = () => {
       let newdata = await fetch(
         "https://crud-django-c7ri.onrender.com/api/user/"
       ).then((res) => res.json());
-      console.log(newdata);
+      // console.log(newdata);
 
       setapidata(newdata.data);
     };
@@ -58,7 +59,6 @@ const User = () => {
               <th className="fw-normal fs_16">Phone Number</th>
               <th className="fw-normal fs_16">Action</th>
             </tr>
-
             <>
               {apidata.map((item, i) => {
                 return (
@@ -75,10 +75,13 @@ const User = () => {
                     <td className="fs_16 fw-normal">{item.phone_no}</td>
                     <td>
                       <div className="position-relative">
+                        {/* img on click  now yu */}
                         <img className="action_dott" src={action_icon} alt="" />
+
+                        {/* // here is the div which i want to hide or show  */}
                         <div
                           style={{ width: "100px" }}
-                          className="action_popup bg-white px_10 action_popup_shadow position-absolute end-0 top-100 d-none"
+                          className="action_popup bg-white px_10 action_popup_shadow position-absolute end-0 top-100 "
                         >
                           <a
                             className="d-flex align-items-center py_10  "
