@@ -1,9 +1,26 @@
 import React, { useEffect, useState } from "react";
 import add_user from "../../assets/images/svg/add_user.svg";
 import { Link } from "react-router-dom";
-
+import view_icon from "../../assets/images/svg/view_icon.svg";
+import edit_icon from "../../assets/images/svg/edit_icon.svg";
+import delete_icon from "../../assets/images/svg/delete_icon.svg";
 import action_icon from "../../assets/images/svg/action_icon.svg";
 const User = () => {
+
+
+
+
+  // -----action_pop--js-----
+  let action_dott = document.querySelector(".action_dott");
+  let action_popup = document.querySelector(".action_popup");
+  action_dott.addEventListener("click", function () {
+    action_popup.classList.toggle("d-block");
+  });
+
+
+
+
+
   let [apidata, setapidata] = useState([]);
   useEffect(() => {
     let myfunc = async () => {
@@ -57,8 +74,35 @@ const User = () => {
                     <td className="fs_16 fw-normal">{item.email}</td>
                     <td className="fs_16 fw-normal">{item.phone_no}</td>
                     <td>
-                      <img src={action_icon} alt="" />
-                      
+                      <div className="position-relative">
+                        <img className="action_dott" src={action_icon} alt="" />
+                        <div
+                          style={{ width: "100px" }}
+                          className="action_popup bg-white px_10 action_popup_shadow position-absolute end-0 top-100 d-none"
+                        >
+                          <a
+                            className="d-flex align-items-center py_10  "
+                            href=""
+                          >
+                            <img src={view_icon} alt="view_icon" />
+                            <p className="ms-2 fs_14 text-black ">View</p>
+                          </a>
+                          <a
+                            className="d-flex align-items-center py_10  "
+                            href=""
+                          >
+                            <img src={edit_icon} alt="view_icon" />
+                            <p className="ms-2 fs_14 text-black ">Edit</p>
+                          </a>
+                          <a
+                            className="d-flex align-items-center py_10   "
+                            href=""
+                          >
+                            <img src={delete_icon} alt="view_icon" />
+                            <p className="ms-2 fs_14  text_red">Delete</p>
+                          </a>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                 );
