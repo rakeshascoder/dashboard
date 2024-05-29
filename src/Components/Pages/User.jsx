@@ -5,22 +5,15 @@ import view_icon from "../../assets/images/svg/view_icon.svg";
 import edit_icon from "../../assets/images/svg/edit_icon.svg";
 import delete_icon from "../../assets/images/svg/delete_icon.svg";
 import action_icon from "../../assets/images/svg/action_icon.svg";
+
 const User = () => {
   // -----action_pop--js-----
 
+  const [activePopupIndex, setPopupIndex] = useState(null);
 
-
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    let action_dott = document.querySelector(".action_dott");
-    let action_popup = document.querySelector(".action_popup");
-    console.log(action_dott);
-    console.log(action_popup);
-
-    action_dott.addEventListener("click", function () {
-      action_popup.classList.toggle("d-none");
-    });
-  });
+  const handleActions = (index) => {
+    setPopupIndex((prev) => (prev === index ? null : index));
+  };
 
   let [apidata, setapidata] = useState([]);
   useEffect(() => {
@@ -75,36 +68,45 @@ const User = () => {
                     <td className="fs_16 fw-normal">{item.phone_no}</td>
                     <td>
                       <div className="position-relative">
-                        {/* img on click  now yu */}
-                        <img className="action_dott" src={action_icon} alt="" />
+                        <img
+                          onClick={() => handleActions(i)}
+                          className="action_dott"
+                          src={action_icon}
+                          alt=""
+                        />
 
-                        {/* // here is the div which i want to hide or show  */}
-                        <div
-                          style={{ width: "100px" }}
-                          className="action_popup bg-white px_10 action_popup_shadow position-absolute end-0 top-100 "
-                        >
-                          <a
-                            className="d-flex align-items-center py_10  "
-                            href=""
+                        {activePopupIndex === i ? (
+                          <div
+                            style={{ width: "100px" }}
+                            className="action_popup bg-white px_10 action_popup_shadow position-absolute end-0 top-100 "
                           >
-                            <img src={view_icon} alt="view_icon" />
-                            <p className="ms-2 fs_14 text-black ">View</p>
-                          </a>
-                          <a
-                            className="d-flex align-items-center py_10  "
-                            href=""
-                          >
-                            <img src={edit_icon} alt="view_icon" />
-                            <p className="ms-2 fs_14 text-black ">Edit</p>
-                          </a>
-                          <a
-                            className="d-flex align-items-center py_10   "
-                            href=""
-                          >
-                            <img src={delete_icon} alt="view_icon" />
-                            <p className="ms-2 fs_14  text_red">Delete</p>
-                          </a>
-                        </div>
+                            <a
+                              className="d-flex align-items-center py_10  "
+                              href=""
+                            >
+                              <img src={view_icon} alt="view_icon" />
+                              <p className="ms-2 fs_14 text-black ">View</p>
+                            </a>
+                            <a
+                              className="d-flex align-items-center py_10  "
+                              href=""
+                            >
+                              <img
+                                onClick={handleActions}
+                                src={edit_icon}
+                                alt="view_icon"
+                              />
+                              <p className="ms-2 fs_14 text-black ">Edit</p>
+                            </a>
+                            <a
+                              className="d-flex align-items-center py_10   "
+                              href=""
+                            >
+                              <img src={delete_icon} alt="view_icon" />
+                              <p className="ms-2 fs_14  text_red">Delete</p>
+                            </a>
+                          </div>
+                        ) : null}
                       </div>
                     </td>
                   </tr>
