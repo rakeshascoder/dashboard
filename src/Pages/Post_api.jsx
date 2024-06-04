@@ -45,7 +45,7 @@ const Post_api = () => {
   return (
     <div>
       <div className="w-50 m-auto">
-        <form onSubmit={submit}>
+        <form className="post_api" onSubmit={submit}>
           <label htmlFor="first_name">First Name</label>
           <input
             type="text"

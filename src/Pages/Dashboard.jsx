@@ -1,9 +1,9 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import dott_icon from "../../assets/images/svg/dott_icon.svg";
-import investers_icon from "../../assets/images/svg/investers_icon.svg";
-import spi_icon from "../../assets/images/svg/spi_icon.svg";
-import chart_img from "../../assets/images/png/chart_img.png";
+import dott_icon from "../assets/images/svg/dott_icon.svg";
+import investers_icon from "../assets/images/svg/investers_icon.svg";
+import spi_icon from "../assets/images/svg/spi_icon.svg";
+import chart_img from "../assets/images/png/chart_img.png";
 
 const Dashboard = () => {
   return (

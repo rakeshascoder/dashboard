@@ -11,7 +11,7 @@
 
 
 /* ------post_api_testing------ start */
-label {
+.post_api label {
     width: 20%;
 
 }
@@ -38,6 +38,18 @@ ol {
 
 }
 
+.bg_grey {
+    background-color: #3D464D;
+}
+
+.bg_green {
+    background-color: #4AAF57;
+}
+
+.bg_red {
+    background-color: #E72929;
+}
+
 .fs_9 {
     font-size: 9px;
 }
@@ -62,9 +74,10 @@ ol {
     font-size: 18px;
 }
 
-.bg_grey {
-    background-color: #3D464D;
+.fs_20 {
+    font-size: 20px;
 }
+
 
 .hover_effect {
     border-radius: 20px 0 0 20px;
@@ -167,6 +180,10 @@ body {
     padding-block: 10px;
 }
 
+.px_15 {
+    padding-inline: 15px;
+}
+
 
 
 .w_33 {
@@ -183,6 +200,18 @@ body {
 
 .mb_20 {
     margin-bottom: 20px;
+}
+
+.mb_10 {
+    margin-bottom: 10px;
+}
+
+.ms_10 {
+    margin-left: 10px;
+}
+
+.my_10 {
+    margin-block: 10px;
 }
 
 .box_shadow {
@@ -217,7 +246,92 @@ body {
 
 }
 
-.action_popup_shadow {
+.popup_shadow {
 
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.action_popup .btn {
+    padding: 0;
+    --bs-btn-border-width: none;
+}
+
+.action_popup .dropdown-menu {
+    --bs-dropdown-min-width: 120px;
+    --bs-dropdown-padding-y: 0;
+    --bs-dropdown-border-width: none;
+    transform: translate3d(-32px, 36.5px, 11px) !important;
+}
+
+/* delete_confirm_popup--------  */
+.delete_confirm_popup {
+    width: 236px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.bg_black_40 {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* add user css --------  */
+.Rest_btn {
+
+    background: linear-gradient(90deg, #8A2387 0%, #E94057 49.43%, #F27121 105.44%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    /* text-fill-color: transparent; */
+}
+
+.linear_border {
+    display: inline-block;
+    background-color: #F5F7FA;
+    position: relative;
+    border-radius: 10px;
+    padding: 12px 24px;
+}
+
+.linear_border::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background: linear-gradient(90deg, #8A2387 0%, #E94057 49.43%, #F27121 105.44%);
+    z-index: -1;
+    border-radius: 12px;
+
+}
+
+.reset_button {
+    padding: 16px 15px;
+    border-radius: 12px;
+    margin-left: 20px;
+}
+
+.add_user_form input {
+    border: 0.5px solid rgba(0, 0, 0, 0.3);
+    width: 100%;
+    
+}
+.add_user_form input:focus{
+    outline: none;
+}
+
+
+.add_user_form label {
+    margin-top: 20px;
+}
+
+.add_user_form ::placeholder {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 400;
 }
