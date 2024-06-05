@@ -54,8 +54,11 @@ const User = () => {
         <div className="bg_sky p_20">
           <div className="d-flex justify-content-between align-items-center mb_20">
             <h1 className="fs_30 lh_38 fw-medium ">Users</h1>
-            <Link to={"/User/Add_new_user/"} className="p-2 bg_yellow rounded-1">
-              <img src={add_user} alt="" />
+            <Link
+              to={"/User/Add_new_user/"}
+              className="p-2 bg_yellow rounded-1"
+            >
+              <img src={add_user} alt="add_user" />
               <span className="text-black ms-2 fs_14">Add New User</span>
             </Link>
           </div>

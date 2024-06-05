@@ -243,7 +243,6 @@ body {
 
 .border_bottom td {
     padding-block: 27px;
-
 }
 
 .popup_shadow {
@@ -265,6 +264,7 @@ body {
     --bs-dropdown-padding-y: 0;
     --bs-dropdown-border-width: none;
     transform: translate3d(-32px, 36.5px, 11px) !important;
+    --bs-dropdown-link-active-bg: #FFAE00;
 }
 
 /* delete_confirm_popup--------  */
@@ -285,6 +285,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    border: none;
 
     /* text-fill-color: transparent; */
 }
@@ -294,7 +295,7 @@ body {
     background-color: #F5F7FA;
     position: relative;
     border-radius: 10px;
-    padding: 12px 24px;
+    padding: 9px 24px;
 }
 
 .linear_border::after {
@@ -316,12 +317,26 @@ body {
     margin-left: 20px;
 }
 
+.save_button {
+    padding: 16px 15px;
+    border-radius: 12px;
+    margin-left: 20px;
+    border: none;
+}
+
+.btn-primary {
+    --bs-btn-active-bg: #FFAE00 !important;
+    --bs-btn-hover-bg: #FFAE00;
+
+}
+
 .add_user_form input {
     border: 0.5px solid rgba(0, 0, 0, 0.3);
     width: 100%;
-    
+
 }
-.add_user_form input:focus{
+
+.add_user_form input:focus {
     outline: none;
 }
 
