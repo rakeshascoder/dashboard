@@ -55,7 +55,7 @@ const User = () => {
             <h1 className="fs_30 lh_38 fw-medium ">Users</h1>
             <Link
               to={"/User/Add_new_user/"}
-              className="p-2 bg_yellow rounded-1"
+              className="p-3 bg_yellow rounded-1"
             >
               <img src={add_user} alt="add_user" />
               <span className="text-black ms-2 fs_14">Add New User</span>
@@ -66,7 +66,12 @@ const User = () => {
             <table className="w-100">
               <tr className="border_btm">
                 <th>
-                  <input type="checkbox" name="checkbox" id="" />
+                  <input
+                    type="checkbox"
+                    className="custom_checkbox align-middle"
+                    name="checkbox"
+                    id=""
+                  />
                 </th>
                 <th className="fw-normal fs_16">Name</th>
                 <th className="fw-normal fs_16">Registration</th>
@@ -80,7 +85,12 @@ const User = () => {
                   return (
                     <tr key={i} className="border_bottom">
                       <td>
-                        <input type="checkbox" name="" id="" />
+                        <input
+                          type="checkbox"
+                          className="custom_checkbox align-middle"
+                          name=""
+                          id=""
+                        />
                       </td>
                       <td className="fs_16 fw-normal">{item.first_name}</td>
                       <td className="fs_16 fw-normal">{item.registration}</td>
