@@ -39,10 +39,9 @@ const User = () => {
       if (response.ok) {
         let getdata = apidata.filter((user) => user.id !== confirm_popup);
         setapidata(getdata);
-        setpopup(null)
-      }
-      else{
-        console.error("failed to delete the user")
+        setpopup(null);
+      } else {
+        console.error("failed to delete the user");
       }
     };
     deletedata();
@@ -103,13 +102,13 @@ const User = () => {
 
                             <Dropdown.Menu className="popup_shadow">
                               <Dropdown.Item href="#/action-1">
-                                <a
+                                <Link
+                                  to={`/User/View_user_detail/${item.id}`}
                                   className="d-flex align-items-center py_10  "
-                                  href=""
                                 >
                                   <img src={view_icon} alt="view_icon" />
                                   <p className="ms-2 fs_14 text-black ">View</p>
-                                </a>
+                                </Link>
                               </Dropdown.Item>
                               <Dropdown.Item href="#/action-2">
                                 <a

@@ -47,7 +47,7 @@ const Add_new_user = () => {
               <div>
                 <div className="linear_border">
                   <Button
-                    onClick={(e) => {e.preventDefult(), setformData(initialformdata)}
+                    onClick={(e) => {e.preventDefault(), setformData(initialformdata)}
                     }
                     type="submit"
                     className="Rest_btn fs_16"

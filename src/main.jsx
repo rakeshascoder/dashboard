@@ -12,6 +12,7 @@ import Term from "./Pages/Term.jsx";
 import Catalog1 from "./Pages/Catalog1.jsx";
 import Catalog2 from "./Pages/Catalog2.jsx";
 import Add_new_user from "./Pages/Add_new_user.jsx";
+import View_user_detail from "./Components/View_user_detail.jsx";
 
 let routes = createBrowserRouter([
   {
@@ -28,6 +29,7 @@ let routes = createBrowserRouter([
       { path: "Catalog1/", element: <Catalog1 /> },
       { path: "Catalog2/", element: <Catalog2 /> },
       { path: "User/Add_new_user/", element: <Add_new_user /> },
+      { path: "User/View_user_detail/:id", element: <View_user_detail /> },
     ],
   },
 ]);
