@@ -36,33 +36,49 @@ const Add_new_user = () => {
   function onChange(e) {
     setformData({ ...formData, [e.target.name]: e.target.value });
   }
-  let add_user_handler = (e) => {
-    e.preventDefault();
 
-    let add_user = async () => {
-      let apidata = await fetch(
-        "https://crud-django-c7ri.onrender.com/api/user/",
-        {
-          method: "POST",
-          body: JSON.stringify(formData),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      ).then((res) => res.json());
-      setformData(initialformdata);
-    };
-    add_user();
+  let update_user = async () => {
+    console.log(formData)
+    let apidata = await fetch(
+      `https://crud-django-c7ri.onrender.com/api/user/${id}/`,
+      {
+        method: "PATCH",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((res) => res.json());
+    setformData(initialformdata);
+  };
+
+  let add_user = async () => {
+    let apidata = await fetch(
+      "https://crud-django-c7ri.onrender.com/api/user/",
+      {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((res) => res.json());
+    setformData(initialformdata);
+  };
+
+  const onSave = (e) => {
+    e.preventDefault();
+    if (id) {
+      update_user();
+    } else {
+      add_user();
+    }
   };
   return (
     <div>
       <div className="dash_height  overflow-y-auto">
         <div className="bg_sky p_20">
-          <form
-            onSubmit={(e) => add_user_handler(e)}
-            className="add_user_form"
-            action=""
-          >
+          <form onSubmit={(e) => onSave(e)} className="add_user_form" action="">
             <div className="d-flex justify-content-between align-items-center mb_20">
               <h1 className="fs_30 lh_38 fw-medium ">Add New User</h1>
               <div>
