@@ -29,6 +29,7 @@ let routes = createBrowserRouter([
       { path: "Catalog1/", element: <Catalog1 /> },
       { path: "Catalog2/", element: <Catalog2 /> },
       { path: "User/Add_new_user/", element: <Add_new_user /> },
+      { path: "User/editUser/:id", element: <Add_new_user /> },
       { path: "User/View_user_detail/:id", element: <View_user_detail /> },
     ],
   },

@@ -1,8 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import reset_icon from "../assets/images/svg/reset_icon.svg";
 import { Row, Col, Button } from "react-bootstrap";
 const Add_new_user = () => {
+  const { id } = useParams();
+
+  useEffect(() => {
+    // TO GET THE USER DATA IF EDITING THE USER PROFILE
+    // it will work only when admin is navigating through edit button
+    if (id) {
+      fetch(`https://crud-django-c7ri.onrender.com/api/user/${id}`)
+        .then((res) => res.json())
+        .then((value) => {
+          setformData({
+            first_name: value.data.first_name,
+            last_name: value.data.last_name,
+            city: value.data.city,
+            state: value.data.state,
+            email: value.data.email,
+            phone_no: value.data.phone_no,
+          });
+        });
+    }
+  }, []);
   const initialformdata = {
     first_name: "",
     last_name: "",
@@ -47,8 +68,9 @@ const Add_new_user = () => {
               <div>
                 <div className="linear_border">
                   <Button
-                    onClick={(e) => {e.preventDefault(), setformData(initialformdata)}
-                    }
+                    onClick={(e) => {
+                      e.preventDefault(), setformData(initialformdata);
+                    }}
                     type="submit"
                     className="Rest_btn fs_16"
                   >

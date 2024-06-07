@@ -121,13 +121,13 @@ const User = () => {
                                 </Link>
                               </Dropdown.Item>
                               <Dropdown.Item href="#/action-2">
-                                <a
+                                <Link
                                   className="d-flex align-items-center py_10  "
-                                  href=""
+                                  to={`/User/editUser/${item.id}`}
                                 >
                                   <img src={edit_icon} alt="view_icon" />
                                   <p className="ms-2 fs_14 text-black ">Edit</p>
-                                </a>
+                                </Link>
                               </Dropdown.Item>
                               <Dropdown.Item href="#/action-3">
                                 <a
